@@ -5,7 +5,10 @@ import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
 class SearchBarCom extends Component {
   render() {
     return (
-      <SearchBar placeholder="Search" maxLength={8} />
+      <View>
+        <SearchBar placeholder="Search" maxLength={8} />
+        <Text>hello world</Text>
+      </View>
     );
   }
 }
