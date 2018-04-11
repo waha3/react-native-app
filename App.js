@@ -1,33 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
-// import Home from './container/home.js';
-import TabBarCom from './component/tabbar.js';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+import { Provider } from 'mobx-react/native';
+import route from './route.js';
+import store from './mobx/store.js';
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <TabBarCom />
-      </View>
+      <Provider store={store}>
+        <route />
+      </Provider>
     );
   }
 }

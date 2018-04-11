@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import { SearchBar } from 'antd-mobile';
 
 class SearchBarCom extends Component {
   render() {
     return (
-      <View>
-        <SearchBar placeholder="Search" maxLength={8} />
-        <Text>hello world</Text>
-      </View>
+      <SearchBar placeholder="Search" maxLength={8} />
     );
   }
 }

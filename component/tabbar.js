@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { TabBar } from 'antd-mobile';
+import { Text } from 'react-native';
+import { observer, inject } from 'mobx-react/native';
+import ScrollableTabView, { ScrollableTabBar }  from 'react-native-scrollable-tab-view';
 
+@inject('homeStore')
+@observer
 export default class TabBarCom extends Component {
-  state = {
-    selectedTab: 'redTab',
-    hidden: false,
-    fullScreen: false,
-  }
-
   render() {
     return (
-      <View style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400, backgroundColor: 'red', width: 1000}}>
-        <TabBar
-          unselectedTintColor="#949494"
-          tintColor="#33A3F4"
-          barTintColor="white"
-          hidden={this.state.hidden}
-        >
-          <TabBar.Item
-            title="Life"
-            key="Life"
-            badge={1}
-            data-seed="logId"
-          >
-            <Text>hello</Text>
-          </TabBar.Item>
-        </TabBar>
-      </View>
+      <ScrollableTabView
+        style={{marginTop: 20, }}
+        initialPage={0}
+        renderTabBar={() => <ScrollableTabBar />}
+      >
+        <Text tabLabel="Tab #1">My</Text>
+        <Text tabLabel="Tab #2 word word">favorite</Text>
+      </ScrollableTabView>
     );
   }
 }
