@@ -1,10 +1,11 @@
 import { StackNavigator } from 'react-navigation';
 import Home from './container/home.js';
 
-const RootStack = StackNavigator({
+export const RootStack = StackNavigator({
   Home: {
-    screen: Home
+    screen: Home,
+    navigationOptions: {
+      header: null
+    }
   }
 });
-
-export default RootStack;

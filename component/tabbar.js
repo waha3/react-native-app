@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import { observer, inject } from 'mobx-react/native';
-import ScrollableTabView, { ScrollableTabBar }  from 'react-native-scrollable-tab-view';
+import { TabBar } from 'antd-mobile';
 
-@inject('homeStore')
-@observer
-export default class TabBarCom extends Component {
-  render() {
-    return (
-      <ScrollableTabView
-        style={{marginTop: 20, }}
-        initialPage={0}
-        renderTabBar={() => <ScrollableTabBar />}
+export default class NavigatorBar extends Component {
+	render() {
+		return (
+			<TabBar
+        unselectedTintColor="#949494"
+        tintColor="#33A3F4"
+        barTintColor="#000"
       >
-        <Text tabLabel="Tab #1">My</Text>
-        <Text tabLabel="Tab #2 word word">favorite</Text>
-      </ScrollableTabView>
-    );
-  }
+      	<TabBar.Item
+					title="发现"
+          key="Life"
+      	>
+      		<Text>A</Text>
+      	</TabBar.Item>
+      	<TabBar.Item
+					title="我的"
+          key="Life"
+      	>
+      		<Text>B</Text>
+      	</TabBar.Item>
+      	<TabBar.Item
+					title="账号"
+          key="Life"
+      	>
+      		<Text>C</Text>
+      	</TabBar.Item>
+      </TabBar>
+		);
+	}
 }

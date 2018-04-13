@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
-import { SearchBar } from 'antd-mobile';
-
-class SearchBarCom extends Component {
-  render() {
-    return (
-      <SearchBar placeholder="Search" maxLength={8} />
-    );
-  }
-}
+import { View } from 'react-native';
+import NavigatorBar from '../component/tabbar.js';
+import { homeStyle } from '../layout/home.js';
 
 export default class Home extends Component {
-  componentWillMount() {
-    console.log(this.props);
-  }
-
   render() {
     return (
-      <SearchBarCom />
+      <View style={homeStyle.container}>
+        <NavigatorBar style={homeStyle.navbar} />
+      </View>
     );
   }
 }
