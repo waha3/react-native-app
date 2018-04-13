@@ -10,6 +10,10 @@ class SearchBarCom extends Component {
 }
 
 export default class Home extends Component {
+  componentWillMount() {
+    console.log(this.props);
+  }
+
   render() {
     return (
       <SearchBarCom />

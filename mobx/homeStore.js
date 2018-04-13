@@ -1,7 +1,7 @@
 import { observable, action, runInAction } from 'mobx';
 import Api from '../api.js';
 
-export class HomeStore {
+export default class HomeStore {
   @observable banner = [];
 
   @action('fectch banner api')
